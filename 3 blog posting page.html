@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: rgb(19, 19, 19);
+}
+
+/* Header */
+.header {
+    position: relative;
+    height: 70vh;
+    background: url('image/31.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+.logo span {
+    color: red;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* Blog Section */
+.blogs-section {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.671);
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-card img {
+    width: 100%;
+    border-bottom: 2px solid red;
+}
+
+.blog-card h3 {
+    padding: 15px;
+}
+
+.blog-card p {
+    padding: 0 15px;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #d10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Upload Section */
+.upload-section {
+    background-color: #f2f2f2;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.upload-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section input, .upload-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.upload-section button {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+    </style>
+    <header class="header">
+        <div class="overlay">
+            <nav class="navbar">
+                <a href="#" class="logo">Blog<span>Site</span></a>
+                <ul>
+                    <li><a href="1 blog website home page.html">Home</a></li>
+                    <li><a href="2 blog website about page.html">About</a></li>
+                    <li><a href="3 blog posting page.html" class="active">Blogs</a></li>
+                    <li><a href="4 contant page.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hero-content">
+                <h1>Our Blog Posts</h1>
+                <p>Discover the latest stories, insights, and tips from our blog.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="blogs-section">
+        <div class="blog-card">
+            <img src="image/impormenr.jpg" alt="Blog 1">
+            <h3>5 Tips to make our self better</h3>
+            <p>A quick guide to improving your self</p>
+            <a href="post.html" class="btn">Read More</a>
+        </div>
+        <div class="blog-card">
+            <img src="image/webdevelopment.jpg" alt="Blog 2">
+            <h3>The Future of Web Development</h3>
+            <p>Explore upcoming trends in web technologies...</p>
+            <a href="post.html" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <section class="upload-section">
+        <h2>Upload Your Blog</h2>
+        <form id="uploadForm" enctype="multipart/form-data" method="POST">
+            <label for="blogTitle">Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle" required>
+
+            <label for="blogImage">Image:</label>
+            <input type="file" id="blogImage" name="blogImage" required>
+
+            <label for="blogContent">Content:</label>
+            <textarea id="blogContent" name="blogContent" rows="5" required></textarea>
+
+            <button type="submit" class="btn">Upload Blog</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 BlogSite. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Blog uploaded successfully!");
+            // Implement server-side form handling logic (using PHP, Node.js, etc.).
+        });
+    </script>
+</body>
+
+</html>
